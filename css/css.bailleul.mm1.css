@@ -1,0 +1,329 @@
+@charset "UTF-8";
+
+/* 
+   Indique que le fichier est encodé en UTF-8, 
+   ce qui permet de gérer correctement les caractères accentués, etc.
+*/
+
+
+/*======================================================
+  2) STYLES GÉNÉRAUX (BODY)
+========================================================*/
+body {
+  /* Police principale du site */
+  font-family: source-sans-pro; 
+  
+  /* Couleur de fond et couleur du texte */
+  background-color: #fff;
+  color: #000;
+
+  /* Marges du document (haut, droite, bas, gauche) en px */
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+
+  /* Style et épaisseur de police */
+  font-style: normal; 
+  font-weight: 200;  /* 200 = plus léger qu'une police par défaut */
+}
+
+
+/*======================================================
+  3) CONTAINER GÉNÉRAL
+========================================================*/
+.container {
+  /* Largeur de 90% de la fenêtre ou de l'élément parent */
+  width: 90%;
+  
+  /* Centrage horizontal (auto à gauche et à droite) */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Hauteur fixée (ici 1000px) */
+  height: 1000px;
+  
+  /* Couleur de fond (blanc) */
+  background-color: #FFFFFF;
+}
+
+
+/*======================================================
+  4) HEADER
+========================================================*/
+header {
+  /* Le header occupe toute la largeur disponible */
+  width: 100%;
+  
+  /* Hauteur fixée à 5% (de la hauteur totale) */
+  height: 5%;
+  
+  /* Couleur de fond jaune */
+  background-color: #fed800;
+  
+  /* Bordures haut et bas en noir */
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
+}
+
+/*------------------------------------------------------
+  Entêtes (titres) dans le header
+--------------------------------------------------------*/
+.entete1 {
+  color: #000;
+  font-weight: bold;
+  
+  /* Largeur et position */
+  width: 20%;
+  float: left; /* Aligne l'élément sur la gauche */
+  
+  /* Marges internes (haut, gauche) */
+  margin-top: 15px;
+  margin-left: 25px;
+  
+  /* Espacement entre les lettres */
+  letter-spacing: 4px;
+}
+
+.entete2 {
+  color: #000;
+  font-weight: bold;
+  width: 100%;
+  
+  margin-top: 15px;
+  margin-left: 25px;
+  
+  letter-spacing: 4px;
+}
+
+.entete3 {
+  color: #000;
+  font-weight: bold;
+  
+  /* Centrage textuel */
+  text-align: center; 
+  
+  /* Largeur et position (float: center n’est pas valide en CSS, 
+     seul left, right ou none fonctionnent. Lignera l’élément comme un bloc si besoin.) */
+  width: 20%;
+
+  margin-top: 15px;
+  margin-left: 25px;
+  
+  letter-spacing: 4px;
+}
+
+
+/*======================================================
+  5) MENU DE NAVIGATION (NAV)
+========================================================*/
+.menu {
+  color: #000;
+  font-weight: bold;
+}
+
+nav {
+  /* Positionnement à droite */
+  float: right; 
+  width: 50%;
+  
+  /* Aligne le texte à droite si besoin */
+  text-align: right; 
+  
+  /* Espace à droite du nav */
+  margin-right: 25px;
+}
+
+/* Liste à puce dans le nav */
+header nav ul {
+  list-style: none; /* Supprime les puces par défaut */
+  float: right;     /* Aligne la liste à droite */
+}
+
+/* Chaque élément <li> de la liste */
+nav ul li {
+  float: left;           /* Les éléments <li> vont se placer côte à côte */
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+  margin-right: 25px;    /* Espace à droite entre chaque <li> */
+  letter-spacing: 2px;
+  font-weight: bold;
+  
+  /* Transition pour les effets (hover) plus doux */
+  transition: all 0.3s linear;
+}
+
+/* Lien dans la liste */
+ul li a {
+  color: #000;
+  text-decoration: none; /* Supprime le soulignement par défaut */
+}
+
+/* Au survol du lien, la couleur passe au rouge foncé (#9a0000) */
+ul li:hover a {
+  color: #9a0000;
+}
+
+
+/*======================================================
+  6) SECTION "HERO"
+========================================================*/
+.hero {
+  /* Couleur de fond gris clair */
+  background-color: #d8d8d8;
+  
+  /* Espacement haut et bas importants pour la mise en page */
+  padding-top: 150px;
+  padding-bottom: 150px;
+  
+  /* Alignement du contenu au centre (texte, images, etc.) */
+  text-align: center;
+}
+
+
+/*======================================================
+  7) COLONNES (70 / 30) - A PROPOS DE MOI
+========================================================*/
+.columns-70-30 {
+  display: flex;       /* Active le mode flex */
+  flex-wrap: nowrap;   /* Les colonnes ne retournent pas à la ligne */
+  
+  /* Aligne verticalement tous les éléments de la classe */
+  align-items: center;
+}
+
+.columns-70-30 > div {
+  /* Permet de gérer correctement les marges/paddings dans la largeur de l’élément */
+  box-sizing: border-box;
+  
+  /* Espacement interne (padding) uniforme */
+  padding: 1rem;
+}
+
+/* Colonne à 70% de la largeur */
+.col-70 {
+  flex: 0 0 70%;
+  background-color: #fff; /* Couleur de fond (optionnelle) */
+}
+
+/* Colonne à 30% de la largeur */
+.col-30 {
+  flex: 0 0 30%;
+  background-color: #fff; /* Couleur de fond (optionnelle) */
+}
+
+
+/*======================================================
+  8) IMAGES
+========================================================*/
+/* 
+   .img-30 fixe la largeur à 55% du conteneur 
+   et maintient le ratio grâce à height: auto
+*/
+.img-30 {
+  width: 55%;
+  height: auto;
+  display: block;   /* Passage en bloc pour marge auto */
+  margin: 0 auto;   /* Centre l'image horizontalement */
+}
+
+
+/*======================================================
+  9) BLOCS DE COULEUR (BANDES JAUNES / BLANCHES)
+========================================================*/
+.fond-jaune {
+  width: 100%;
+  height: 5%;
+  background-color: #fed800;
+  
+  /* Bordures haut et bas noires */
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
+}
+
+.fond-blanc1 {
+  width: 100%;
+  background-color: #fff;
+  
+  /* Bordures haut et bas noires */
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
+}
+
+.fond-blanc2 {
+  width: 100%;
+  background-color: #fff;
+  
+  /* Bordures haut et bas noires */
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
+  
+  text-align: center;
+}
+
+
+/*======================================================
+  10) TRAIT SÉPARATEUR JAUNE
+========================================================*/
+.trait-jaune {
+  height: 6px;               /* Épaisseur du trait */
+  border: none;              /* Retire la bordure HTML par défaut */
+  background-color: #fed800; /* Couleur de fond = jaune */
+  margin: 2rem 0;            /* Espacement vertical au-dessus et en dessous */
+}
+
+
+/*======================================================
+  11) PARAGRAPHES
+========================================================*/
+.paragraphe1 {
+  width: 35%;
+  text-align: justify;   /* Alignement justifié */
+  font-weight: lighter;
+  
+  /* Espacement vertical entre les lignes */
+  line-height: 25px;
+  
+  /* Espacement interne gauche et droit */
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  color: #000;
+}
+
+.paragraphe2 {
+  width: 29%;
+  text-align: left;
+  font-weight: lighter;
+  line-height: 25px;
+  
+  /* Flotte à gauche (mis en forme à gauche) */
+  float: left;
+  
+  /* Espacement interne gauche et droit */
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  color: #A3A3A3;
+}
+
+
+/*======================================================
+  12) TEXTE "A PROPOS"
+========================================================*/
+.text_about {
+  width: 80%;
+  
+  /* Alignement justifié (tex-justify) */
+  text-align: justify;
+  font-weight: lighter;
+  line-height: 25px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #000;
+
+  /* Agrandir un peu la taille de la police */
+  font-size: 1.8rem;
+}
